@@ -1,14 +1,6 @@
 import Navbar from "@/components/navbar";
 import "./globals.css";
 
-import { Pacifico, Great_Vibes, Playball } from "next/font/google";
-
-const greatVibes = Playball({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400"],
-});
-
 export const metadata = {
   title: "Wedding Bliss",
   description:
@@ -22,8 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${greatVibes.className}`}>
-        {/* <Navbar /> */}
+      <body className={""}>
+        <Navbar />
         {children}
       </body>
     </html>

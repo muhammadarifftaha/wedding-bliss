@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .rsvp-input-group {
+    @apply flex flex-col items-center justify-between gap-2 text-lg;
+  }
+  .rsvp-input-group > label {
+    @apply w-full;
+  }
+  .rsvp-input-group input {
+    @apply w-full px-4 py-2 border rounded;
+  }
+  .rsvp-input-group select {
+    @apply px-4 py-2 border rounded;
+  }
+}

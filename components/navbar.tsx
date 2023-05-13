@@ -13,7 +13,7 @@ const pacifico = Pacifico({
 export default function Navbar() {
   return (
     <header
-      className={`absolute w-full px-6 py-3 z-[100] bg-gradient-to-b via-neutral-50/30 from-neutral-50/60 to-transparent ${pacifico.className}`}>
+      className={`fixed top-0 w-full px-6 py-3 z-[100] bg-gradient-to-b via-neutral-50/30 from-neutral-50/60 to-transparent ${pacifico.className}`}>
       <nav>
         <ul className="flex flex-row items-center justify-center gap-12 text-lg font-medium list-none">
           <li>

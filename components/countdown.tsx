@@ -21,10 +21,10 @@ export default function Countdown() {
               <AnimatePresence>
                 <motion.p
                   key={countdown[key]}
-                  initial={{ y: -20, opacity: 0, position: "static" }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: 50, opacity: 0, position: "absolute" }}
-                  transition={{ duration: 1, ease: "easeOut" }}
+                  // initial={{ y: -20, opacity: 0, position: "static" }}
+                  // animate={{ y: 0, opacity: 1 }}
+                  // exit={{ y: 50, opacity: 0, position: "absolute" }}
+                  // transition={{ duration: 1, ease: "easeOut" }}
                   className={`text-2xl font-bold ${inconsolata.className}`}>
                   {("00" + countdown[key]).slice(-2)}
                 </motion.p>
