@@ -1,5 +1,9 @@
 import Navbar from "@/components/navbar";
 import "./globals.css";
+import { AnimatePresence } from "framer-motion";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
 export const metadata = {
   title: "Wedding Bliss",
@@ -14,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={""}>{children}</body>
+      <body className="">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

@@ -3,10 +3,38 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl         = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
 }
 
-model guests {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+model Users {
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
+  name     String?
+  password String?
+  role     String  @default("staff")
+}
+
+model Guest {
+  id              String  @id @default(dbgenerated("shortkey_generate()")) @db.VarChar(11)
+  title           String
+  name            String
+  pax             Int
+  additionalNames String
+  email           String
+  invitedBy       String
+  isSplit         Boolean @default(false)
+  isInvited       Boolean @default(false)
+  isAtteding      Boolean @default(false)
+  other           Json?
+  tableID         Int?
+  table           Table?  @relation(fields: [tableID], references: [id])
+}
+
+model Table {
+  id     Int     @id @default(autoincrement())
+  name   String?
+  guests Guest[]
 }
